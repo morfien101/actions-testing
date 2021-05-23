@@ -29,7 +29,7 @@ jobs:
       run: |
         mkdir -p artifacts
         for os in linux darwin windows; do
-          CGO_ENABLED=0 GOOS=$os go build -a -ldflags "-X main.version='${{ steps.get_tag.outputs.SOURCE_TAG }}' -o artifacts/chat_$os
+          CGO_ENABLED=0 GOOS=$os go build -a -ldflags "-X main.version='${{ steps.get_tag.outputs.SOURCE_TAG }}'" -o artifacts/chat_$os
         done
         mv artifacts/chat_windows artifacts/chat_windows.exe
     - name: Release
