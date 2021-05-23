@@ -1,3 +1,4 @@
 # Changes
 
-This is the first release and will let me test the release uploader
+1. Removed quotes from version string in build.
+1. Added a version print to the build to see that it shows correctly.
