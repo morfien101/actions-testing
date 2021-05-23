@@ -5,12 +5,10 @@ jobs:
     if: startsWith(github.ref, 'refs/heads/main')
     runs-on: ubuntu-latest
     steps:
-    #- uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - uses: actions/setup-go@v2
       with:
         go-version: '^1.13.1'
-    - name: output_workflow
-      run: echo ${{ github.workflow }}-CHANGELOG.txt
     - name: go test
       run: go test -v ./...
   test_build_release:
